@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task_1</title>
+
+    <style>
+        /* Reset and basic styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Navigation links (horizontal by default) */
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Hide menu toggle by default */
+        .menu-toggle {
+            display: none;
+        }
+
+        /* Hamburger icon (☰) */
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* Responsive styles for small screens */
+        @media (max-width: 768px) {
+
+            /* Show hamburger icon */
+            .menu-icon {
+                display: block;
+            }
+
+            /* Stack nav links vertically off screen */
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 200px;
+                height: 100%;
+                background-color: #333;
+                flex-direction: column;
+                padding-top: 60px;
+                transition: left 0.3s ease;
+            }
+
+            /* When checkbox is checked, show the menu */
+            .menu-toggle:checked+label+nav {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Website name -->
+        <div class="nav-brand">CodingLab</div>
+
+        <!-- Menu toggle checkbox (hidden) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+        <!-- Label for menu icon (acts like a button) -->
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <!-- Navigation links -->
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Feedback</a>
+        </nav>
+    </header>
+</body>
+
+</html>
